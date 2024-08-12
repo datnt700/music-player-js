@@ -15,16 +15,14 @@ var cur_time = myaudio.currentTime;
 const audioPlayers = document.querySelectorAll('.audio-player');
 
 let currentAudioIndex = 0;
+let isPlaying = false;
 
 const audioList = Array.from(audioPlayers);
 
 // Khởi tạo âm thanh đầu tiên
 let currentAudio = audioList[currentAudioIndex];
-playAudio(currentAudio);
 
 function playAudio(audio) {
-  console.log('1', audio);
-
   audioList.forEach((audioElement) => {
     if (audioElement !== audio) {
       audioElement.pause();
@@ -32,10 +30,14 @@ function playAudio(audio) {
     }
   });
   if (audio.paused) {
+    console.log('1', audio);
+
     audio.play();
+    isPlaying = true;
     btnMain.querySelector('img').src = './assets/Stop.svg';
   } else {
     audio.pause();
+    isPlaying = false;
     btnMain.querySelector('img').src = './assets/Play_fill.svg';
   }
   updateTrackTime(audio);
@@ -54,8 +56,6 @@ btnPrev.addEventListener('click', (event) => {
 btnNext.addEventListener('click', (event) => {
   event.preventDefault();
   if (currentAudioIndex < audioList.length - 1) {
-    console.log(' audioList.length', audioList.length);
-
     currentAudioIndex++;
     currentAudio = audioList[currentAudioIndex];
     playAudio(currentAudio);
