@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="./assets/cover-1.png" alt="photo" class="image" />
+        <div class="info">
+          <h3 class="name">Lost in the City Lights</h3>
+          <p class="author">Cosmo Sheldrake</p>
+        </div>
+        <div class="line">
+          <div class="line-time">
+            <p class="time current"></p>
+            <p class="time track"></p>
+          </div>
+          <div class="line-bar">
+            <div class="line-track"></div>
+          </div>
+        </div>
+
+        <div class="control">
+          <button class="btn prev">
+            <img src="./assets/Stop_and_play_fill-1.svg" alt="button" />
+          </button>
+          <button class="btn main">
+            <img class="start" src="./assets/Play_fill.svg" alt="" />
+          </button>
+          <button class="btn next">
+            <img class="right" src="./assets/Stop_and_play_fill.svg" alt="" />
+          </button>
+          <audio
+            class="audio-player"
+            data-name="audio1"
+            id="track"
+            src="./assets/lost-in-city-lights-145038.mp3"
+          ></audio>
+          <audio
+            class="audio-player"
+            data-name="audio2"
+            id="track-2"
+            src="./assets/forest-lullaby-110624.mp3"
+          ></audio>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
